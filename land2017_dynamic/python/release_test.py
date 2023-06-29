@@ -47,9 +47,7 @@ s[0,:] = init
 for i,t0 in enumerate(t[:-1]):
     t1 = t[i+1]
     lmbda_new = lmbda_step(t1)
-    lmbda_prev = lmbda_step(t0)
-    dlmbda = (lmbda_new-lmbda_prev)/(t1-t0)
-    p = land_model.init_parameter_values(lmbda_set=lmbda_new,Ca_amplitude=0.6, Ca_diastolic=0.17, tau1=75, tau2=175)
+    p = land_model.init_parameter_values(lmbda_set=lmbda_new,Kse=1e5,Ca_amplitude=0.6, Ca_diastolic=0.17, tau1=75, tau2=175)
     s[i+1,:] = odeint(land_model.rhs,init,[t0,t1],(p,))[-1]
     init = s[i+1,:]
 

@@ -82,14 +82,3 @@ dLambda = tot_force/visc
 dZetas_dt = As*dLambda - cs*Zetas
 dZetaw_dt = Aw*dLambda - cw*Zetaw
 dlmbda_dt = dLambda
-
-
-
-#C = lambda_min12 - 1
-#dCd = C - Cd
-#eta = Conditional(Lt(dCd, 0), etas, etal)
-#dCd_dt = p_k * (C - Cd) / eta
-#Fd = eta * dCd
-#F1 = (exp( p_b * C) - 1)
-#Tp = p_a * (F1 + Fd)
-#Ttot = Ta + Tp
